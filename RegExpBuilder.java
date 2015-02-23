@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class RegExpBuilder {
@@ -23,8 +24,8 @@ public class RegExpBuilder {
 
     public RegExpBuilder() {
         _literal = new StringBuilder();
-        _specialCharactersInsideCharacterClass = new HashSet<Character>(Arrays.asList(new Character[] { '^', '-', ']' }));
-        _specialCharactersOutsideCharacterClass = new HashSet<Character>(Arrays.asList(new Character[] { '.', '^', '$', '*', '+', '?', '(', ')', '[', '{' }));
+        _specialCharactersInsideCharacterClass = new HashSet<>(Arrays.asList(new Character[] { '^', '-', ']' }));
+        _specialCharactersOutsideCharacterClass = new HashSet<>(Arrays.asList(new Character[] { '.', '^', '$', '*', '+', '?', '(', ')', '[', '{' }));
         _escapedString = new StringBuilder();
         _clear();
     }
@@ -46,7 +47,7 @@ public class RegExpBuilder {
     }
 
     private void _flushState() {
-        if (_of != "" || _ofAny || _ofGroup > 0 || _from != "" || _notFrom != "" || _like != "") {
+        if (!Objects.equals(_of, "") || _ofAny || _ofGroup > 0 || !Objects.equals(_from, "") || !Objects.equals(_notFrom, "") || !Objects.equals(_like, "")) {
             String captureLiteral = _capture ? "" : "?:";
             String quantityLiteral = getQuantityLiteral();
             String characterLiteral = getCharacterLiteral();
@@ -67,7 +68,7 @@ public class RegExpBuilder {
     }
 
     private String getCharacterLiteral() {
-        if (_of != "") {
+        if (!Objects.equals(_of, "")) {
             return _of;
         }
         if (_ofAny) {
@@ -76,13 +77,13 @@ public class RegExpBuilder {
         if (_ofGroup > 0) {
             return "\\" + _ofGroup;
         }
-        if (_from != "") {
+        if (!Objects.equals(_from, "")) {
             return "[" + _from + "]";
         }
-        if (_notFrom != "") {
+        if (!Objects.equals(_notFrom, "")) {
             return "[^" + _notFrom + "]";
         }
-        if (_like != "") {
+        if (!Objects.equals(_like, "")) {
             return _like;
         }
         return "";
@@ -149,7 +150,7 @@ public class RegExpBuilder {
     public RegExpBuilder or(RegExpBuilder r) {
         String either = _either;
         String or = r.getLiteral();
-        if (either == "") {
+        if (Objects.equals(either, "")) {
             _literal.deleteCharAt(_literal.length() - 1);
             _literal.append("|(?:" + or + "))");
         } else {
