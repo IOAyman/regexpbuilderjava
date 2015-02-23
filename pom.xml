@@ -10,10 +10,25 @@
     <packaging>jar</packaging>
 
     <name>Regular Expressions Builder (Java)</name>
+    <url>https://github.com/thebinarysearchtree/regexpbuilderjava</url>
     <description>RegExpBuilder integrates Regular Expressions into the programming language, thereby making them easy to
         read and maintain. Regular Expressions are created by using
         chained methods and variables such as arrays or strings.
     </description>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://github.com/thebinarysearchtree/regexpbuilderjava/blob/master/LICENSE.md</url>
+        </license>
+    </licenses>
+
+    <contributors>
+        <contributor>
+            <name>Ayman Nedjmeddine</name>
+            <url>https://github.com/IOAyman/regexpbuilderjava</url>
+        </contributor>
+    </contributors>
 
 
     <dependencies>
@@ -26,10 +41,11 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main</sourceDirectory>
-        <testSourceDirectory>src/test</testSourceDirectory>
-        <outputDirectory>target/classes</outputDirectory>
-        <testOutputDirectory>target/test-classes</testOutputDirectory>
+        <finalName>${artifactId}-${version}</finalName>
+        <sourceDirectory>${basedir}/src/main</sourceDirectory>
+        <testSourceDirectory>${basedir}/src/test</testSourceDirectory>
+        <outputDirectory>${basedir}/target/classes</outputDirectory>
+        <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
 
         <plugins>
             <plugin>

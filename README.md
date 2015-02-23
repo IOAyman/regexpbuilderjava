@@ -1,4 +1,4 @@
-#RegExpBuilder v1.0
+#RegExpBuilder
 
 RegExpBuilder integrates [Regular Expressions](http://wikipedia.org/wiki/Regular_expression) into the programming
 language, thereby making them easy to read and maintain. Regular Expressions are created by using chained methods and variables such as arrays or strings.
