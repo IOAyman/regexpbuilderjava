@@ -52,7 +52,7 @@ public class RegExpBuilder {
             String quantityLiteral = getQuantityLiteral();
             String characterLiteral = getCharacterLiteral();
             String reluctantLiteral = _reluctant ? "?" : "";
-            _literal.append("(" + captureLiteral + "(?:" + characterLiteral + ")" + quantityLiteral + reluctantLiteral + ")");
+            _literal.append("(").append(captureLiteral).append("(?:").append(characterLiteral).append(")").append(quantityLiteral).append(reluctantLiteral).append(")");
             _clear();
         }
     }
@@ -152,9 +152,9 @@ public class RegExpBuilder {
         String or = r.getLiteral();
         if (Objects.equals(either, "")) {
             _literal.deleteCharAt(_literal.length() - 1);
-            _literal.append("|(?:" + or + "))");
+            _literal.append("|(?:").append(or).append("))");
         } else {
-            _literal.append("(?:(?:" + either + ")|(?:" + or + "))");
+            _literal.append("(?:(?:").append(either).append(")|(?:").append(or).append("))");
         }
         _clear();
         return this;
@@ -220,13 +220,13 @@ public class RegExpBuilder {
 
     public RegExpBuilder ahead(RegExpBuilder r) {
         _flushState();
-        _literal.append("(?=" + r.getLiteral() + ")");
+        _literal.append("(?=").append(r.getLiteral()).append(")");
         return this;
     }
 
     public RegExpBuilder notAhead(RegExpBuilder r) {
         _flushState();
-        _literal.append("(?!" + r.getLiteral() + ")");
+        _literal.append("(?!").append(r.getLiteral()).append(")");
         return this;
     }
 
@@ -400,7 +400,7 @@ public class RegExpBuilder {
         for (int i = 0; i < s.length(); i++) {
             char character = s.charAt(i);
             if (specialCharacters.contains(character)) {
-                _escapedString.append("\\" + character);
+                _escapedString.append("\\").append(character);
             } else {
                 _escapedString.append(character);
             }
