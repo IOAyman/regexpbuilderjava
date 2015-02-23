@@ -7,15 +7,14 @@
     <groupId>IOAyman</groupId>
     <artifactId>RegExpBuilderJava</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <name>Regular Expressions Builder (Java)</name>
     <description>RegExpBuilder integrates Regular Expressions into the programming language, thereby making them easy to
         read and maintain. Regular Expressions are created by using
         chained methods and variables such as arrays or strings.
     </description>
 
-    <properties>
-        <java.version>1.7</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -29,7 +28,8 @@
     <build>
         <sourceDirectory>src/main</sourceDirectory>
         <testSourceDirectory>src/test</testSourceDirectory>
-        <outputDirectory>target</outputDirectory>
+        <outputDirectory>target/classes</outputDirectory>
+        <testOutputDirectory>target/test-classes</testOutputDirectory>
 
         <plugins>
             <plugin>
