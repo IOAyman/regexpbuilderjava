@@ -11,7 +11,7 @@ Here are a couple of examples using Javascript:
 
 ###Money
 
-```
+```javascript
 var regex = r
   .find("$")
   .min(1).digits()
@@ -25,7 +25,7 @@ regex.test("$10.00")); // true
 
 ###Nested patterns
 
-```
+```javascript
 var pattern = r
   .min(1).of("p")
   .min(2).of("q");
@@ -39,6 +39,10 @@ regex.test("pqqpqq"); // true
 
 ##API documentation
 RegExpBuilder can represent literally every possible regular expression using methods such as either(), or(), behind(), asGroup() and so on. You can find the API documentation for each language [here](https://github.com/thebinarysearchtree/RegExpBuilder/wiki).
+
+##Dependencies
+This projects depends on the [JUnit](junit.org) library for unit tests, so you have to have the _jar_ in your path.  
+An option is to `git checkout maven-support` if you prefer using [maven](maven.org).
 
 ##License
 The [MIT License](https://github.com/IOAyman/regexpbuilderjava/blob/master/LICENSE.md)
