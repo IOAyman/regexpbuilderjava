@@ -41,7 +41,7 @@ regex.test("pqqpqq"); // true
 RegExpBuilder can represent literally every possible regular expression using methods such as either(), or(), behind(), asGroup() and so on. You can find the API documentation for each language [here](https://github.com/thebinarysearchtree/RegExpBuilder/wiki).
 
 ##Dependencies
-This projects depends on the [JUnit](junit.org) library for unit tests, so you have to have the _jar_ in your path.
+This projects depends on the [JUnit](http://junit.org) library for unit tests, so you have to have the _jar_ in your path.
 An option is to switch to the [maven-support branch](https://github.com/IOAyman/regexpbuilderjava/tree/maven-support) (`git checkout maven-support`) if you prefer using [maven] (maven.org).
 
 ##License
