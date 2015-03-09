@@ -42,7 +42,7 @@ RegExpBuilder can represent literally every possible regular expression using me
 
 ##Dependencies
 This projects depends on the [JUnit](http://junit.org) library for unit tests, so you have to have the _jar_ in your path.
-An option is to switch to the [maven-support branch](https://github.com/IOAyman/regexpbuilderjava/tree/maven-support) (`git checkout maven-support`) if you prefer using [maven] (maven.org).
+An option is to switch to the [maven-support branch](https://github.com/IOAyman/regexpbuilderjava/tree/maven-support) (`git checkout maven-support`) if you prefer using [maven] (http://maven.org).
 
 ##License
 The [MIT License](https://github.com/IOAyman/regexpbuilderjava/blob/master/LICENSE.md)
